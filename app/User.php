@@ -10,7 +10,7 @@ class User extends Authenticatable
 
 
     protected $fillable = [
-        'name', 'email', 'password','task_id',
+        'name', 'email', 'password',
     ];
 
     protected $hidden = [
@@ -25,4 +25,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Thread::class);
     }
+   public function isAdmin() {
+if($this->admin == 1) return true;
+else return false;
+      }
 }

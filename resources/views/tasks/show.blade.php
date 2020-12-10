@@ -35,7 +35,7 @@
         <td>{{$t->name}}</td>
         <td>{{$t->task_date}}</td>
         <td>{{$t->description}}</td>
-       <td> <a href="{{ route('allt',$t->id) }}">&check;</a></td>
+       <td> <a href="{{ route('delete',$t->id) }}">&check;</a></td>
 </tr>
 @endforeach
 </table>

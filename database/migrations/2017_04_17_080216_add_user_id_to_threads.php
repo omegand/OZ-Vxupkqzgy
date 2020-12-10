@@ -15,6 +15,7 @@ class AddUserIdToThreads extends Migration
     {
         Schema::table('threads', function (Blueprint $table) {
             $table->integer('user_id');
+            $table->integer('admin');
         });
     }
 

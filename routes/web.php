@@ -7,6 +7,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('/thread','ThreadController');
 Route::get('/showalltasks','TasksController@showall')->name('allt');
+Route::get('/dashboard','TasksController@dostuff')->name('dashb');
+Route::get('/delete/{id}','TasksController@destroy')->name('delete');
 Route::resource('comment','CommentController',['only'=>['update','destroy']]);
 Route::resource('tasks', 'TasksController');
 Route::post('comment/create/{thread}','CommentController@addThreadComment')->name('threadcomment.store');

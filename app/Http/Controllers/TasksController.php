@@ -90,6 +90,12 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('bookings')->delete($id);
+        return redirect()->route('allt')->withMessage("Registracija ištrinta");
+    }
+
+    public function dostuff()
+    {
+        return view('dashboard');
     }
 }

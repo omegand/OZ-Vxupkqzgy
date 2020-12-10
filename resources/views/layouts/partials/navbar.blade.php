@@ -7,7 +7,9 @@
         </a>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
+                @if (Auth::check() && Auth::user()->isAdmin())
+                <li><a href="{{ route('dashb') }}">Dashboard</a></li>
+                @endif
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Prisijungti</a></li>
                     <li><a href="{{ route('register') }}">Registruotis</a></li>
