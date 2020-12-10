@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 use App\Task;
 use App\User;
 use App\Bookings;
+use App\Mail\SubMail;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class TasksController extends Controller
 {
@@ -94,8 +96,15 @@ class TasksController extends Controller
         return redirect()->route('allt')->withMessage("Registracija ištrinta");
     }
 
-    public function dostuff()
+    public function dashboard()
     {
         return view('dashboard');
+    }
+    public function sendmail()
+    {
+        $user = User::select('email')->get();
+        foreach ($user as $u)
+        Mail::to($u)->send(new SubMail());
+        return redirect()->back()->withMessage("Išsiūstas email");
     }
 }

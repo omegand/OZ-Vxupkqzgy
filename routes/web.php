@@ -5,9 +5,10 @@ Route::get('/', function () {
     return view('welcome',compact('threads'));
 });
 Auth::routes();
+Route::post('/dashboard/mail','TasksController@sendmail')->name('sendmail');
 Route::resource('/thread','ThreadController');
 Route::get('/showalltasks','TasksController@showall')->name('allt');
-Route::get('/dashboard','TasksController@dostuff')->name('dashb');
+Route::get('/dashboard','TasksController@dashboard')->name('dashb');
 Route::get('/delete/{id}','TasksController@destroy')->name('delete');
 Route::resource('comment','CommentController',['only'=>['update','destroy']]);
 Route::resource('tasks', 'TasksController');
