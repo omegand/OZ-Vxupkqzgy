@@ -8,15 +8,9 @@
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css">
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
 </head>
 <body >
-<div id="app">
+<div id="app" >
 @include('layouts.partials.navbar')
 <div class="container">
     @include('layouts.partials.error')
@@ -35,11 +29,6 @@
     </div>
 </div>
 </div>
-{{--<script src="https://code.jquery.com/jquery-3.1.1.min.js"--}}
-        {{--integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="--}}
-        {{--crossorigin="anonymous"></script>--}}
-{{--<!-- Latest compiled and minified JS -->--}}
-<script src="{{asset('js/main.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
 @yield('js')
 </body>
