@@ -16,7 +16,6 @@ trait CommentableTrait
         $comment=new Comment();
         $comment->body=$body;
         $comment->user_id=auth()->user()->id;
-
         $this->comments()->save($comment);
 
         return $comment;

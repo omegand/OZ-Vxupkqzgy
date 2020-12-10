@@ -9,6 +9,7 @@ class Comment extends Model
     use CommentableTrait;
 
     protected $fillable=['body','user_id'];
+    
     public function commentable()
     {
         return $this->morphTo();
