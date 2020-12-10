@@ -48,6 +48,9 @@
     {{ csrf_field() }}
     <button type="submit">Send Newsletter</button>
   </form>
+<br>
+<br>
+<h3> Įkėlti nuotrauka</h3>
 
   <div class="card-body">
     <form action="/upload" method="POST" enctype="multipart/form-data">
