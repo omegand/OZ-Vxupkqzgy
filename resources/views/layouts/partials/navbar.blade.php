@@ -34,8 +34,7 @@
                         </ul>
                         <li><a href="{{ route('tasks.index') }}">Registracija į užsiemimus</a></li>
                         <li><a href="{{ route('allt') }}">Registracijų redagavimas</a></li>
-
-
+                        <li><a href="{{ route('images') }}">Peržiūrėti švenčių nuotraukas</a></li>
                     </li>
                 @endif
             </ul>

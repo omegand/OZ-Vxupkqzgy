@@ -7,14 +7,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Registravimas į renginius </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {
-            !!json_encode([
-                'csrfToken' => csrf_token(),
-            ]) !!
-        };
-    </script>
 </head>
 
 <body>
@@ -35,7 +27,7 @@
         </tr>
         @foreach(File::glob(public_path('images').'/*') as $path)
         <tr>
-            <td><img src="{{ str_replace(public_path(), '', $path) }}" width="350" height="200">
+            <td><img src="{{ str_replace(public_path(), '', $path) }}" width="800" height="640">
             </td>
         </tr>
 

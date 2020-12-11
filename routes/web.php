@@ -12,7 +12,7 @@ Route::post('/dashboard/mail', 'TasksController@sendmail')->name('sendmail');
 Route::post(
     '/upload',
     function (Request $request) {
-        $request->image->store('images');
+        $request->image->store('images','public');
         return redirect()->back()->withMessage("Įkėlta nuotrauka");
 
     }
@@ -22,7 +22,7 @@ Route::get(
     function () {
         return view('images');
     }
-);
+)->name("images");
 
 
 Route::resource('/thread', 'ThreadController');
