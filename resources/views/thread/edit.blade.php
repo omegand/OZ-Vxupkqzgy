@@ -1,5 +1,6 @@
 @extends('layouts.front')
 @section('content')
+@include('layouts.partials.error')
     <div class="row">
         <div class=" well">
             <form class="form-vertical" action="{{route('thread.update',$thread->id)}}" method="post" role="form"

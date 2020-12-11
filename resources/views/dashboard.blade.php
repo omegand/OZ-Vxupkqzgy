@@ -13,7 +13,6 @@
   <div id="app">
     @include('layouts.partials.navbar')
     <div class="container">
-      @include('layouts.partials.error')
       @include('layouts.partials.success')
     </div>
   </div>
@@ -62,4 +61,4 @@
   @else
   <h2>Jūs neturite prieigos prie šio puslapio</h2>
   @endif
-  
+

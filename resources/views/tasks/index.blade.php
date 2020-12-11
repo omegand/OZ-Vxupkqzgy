@@ -11,7 +11,6 @@
 <div id="app">
 @include('layouts.partials.navbar')
     <div class="container">
-        @include('layouts.partials.error')
         @include('layouts.partials.success')
     </div>
 </div>

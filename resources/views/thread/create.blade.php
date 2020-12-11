@@ -1,7 +1,7 @@
 @extends('layouts.front')
-
 @section('heading',"Sukurti Diskusija")
 @section('content')
+@include('layouts.partials.error')
     <div class="row">
         <div class=" well">
             <form class="form-vertical" action="{{route('thread.store')}}" method="post" role="form"

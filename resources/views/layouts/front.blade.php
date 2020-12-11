@@ -13,7 +13,6 @@
 <div id="app" >
 @include('layouts.partials.navbar')
 <div class="container">
-    @include('layouts.partials.error')
     @include('layouts.partials.success')
     <div class="row">
         <h2> Šokių forumas, susirask partneri!</h2>
