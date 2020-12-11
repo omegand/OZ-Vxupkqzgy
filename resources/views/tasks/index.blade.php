@@ -6,12 +6,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Registravimas į renginius </title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
 </head>
 <body>
 <div id="app">

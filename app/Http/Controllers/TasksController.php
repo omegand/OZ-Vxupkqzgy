@@ -25,13 +25,15 @@ class TasksController extends Controller
     public function showall()
     { 
         $userId = Auth::id();
-       // $data = Bookings::where('user_id','=',$userId)->get();
        $data = DB::select("
        SELECT tasks.name,tasks.task_date,tasks.description,bookings.user_id,bookings.id as id
        FROM tasks
        INNER JOIN bookings
        ON bookings.task_id = tasks.id
        WHERE bookings.user_id ='$userId'");
+       if ( is_null($data) ) {
+        return redirect()->back()->withMessage("Įvyko klaida");
+    }
         return view('tasks.show',['tasks' => $data]);
     }
     /**
@@ -103,6 +105,9 @@ class TasksController extends Controller
     public function sendmail()
     {
         $user = User::select('email')->get();
+        if ( is_null($user) ) {
+            return redirect()->back()->withMessage("Nerasta vartotojų");
+        }
         foreach ($user as $u)
         Mail::to($u)->send(new SubMail());
         return redirect()->back()->withMessage("Išsiūstas email");

@@ -8,7 +8,7 @@
   <title>Dashboard </title>
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
-
+@if (Auth::check() && Auth::user()->isAdmin())
 <body>
   <div id="app">
     @include('layouts.partials.navbar')
@@ -59,3 +59,7 @@
       <input type="submit" value="upload" />
     </form>
   </div>
+  @else
+  <h2>Jūs neturite prieigos prie šio puslapio</h2>
+  @endif
+  
