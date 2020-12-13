@@ -8,6 +8,7 @@ Route::get('/', function () {
     return view('welcome', compact('threads'));
 });
 Auth::routes();
+Route::get('/calendar/{id}', 'TasksController@showcalendar')->name('cal');
 Route::post('/dashboard/mail', 'TasksController@sendmail')->name('sendmail');
 Route::post(
     '/upload',
@@ -23,8 +24,7 @@ Route::get(
         return view('images');
     }
 )->name("images");
-
-
+Route::any('/showhalls', 'TasksController@showhalls')->name('halls');
 Route::resource('/thread', 'ThreadController');
 Route::get('/showalltasks', 'TasksController@showall')->name('allt');
 Route::get('/dashboard', 'TasksController@dashboard')->name('dashb');

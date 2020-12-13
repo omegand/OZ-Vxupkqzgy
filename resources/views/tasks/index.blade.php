@@ -32,15 +32,7 @@
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             locale: 'lt',
-            events : [
-                @foreach($tasks as $task)
-                {
-                    title : '{{ $task->name }}',
-                    start : '{{ $task->task_date }}',
-                    url : '{{ route('tasks.show', $task->id) }}'
-                },
-                @endforeach
-            ]
+            
         });
         calendar.render();
       });

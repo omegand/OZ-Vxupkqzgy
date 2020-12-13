@@ -26,7 +26,7 @@
         </tr>
         @foreach(File::glob(public_path('images').'/*') as $path)
         <tr>
-            <td><img src="{{ str_replace(public_path(), '', $path) }}" width="800" height="640">
+            <td><img src="{{ str_replace(public_path(), '', $path) }}" width="480" height="350">
             </td>
         </tr>
 
