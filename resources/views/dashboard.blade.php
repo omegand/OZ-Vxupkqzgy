@@ -28,6 +28,10 @@
     <br />
     <textarea name="description"></textarea>
     <br /><br />
+    Halls id
+    <br />
+    <input type="number" name="halls_id" />
+    <br /><br />
     Pradžios laikas
     <br />
     <input type="text" name="task_date" class="date" />
